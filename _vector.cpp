@@ -1,6 +1,6 @@
-//
-// basic concept
-//
+// vector
+// iterator가 순서적으로 되어 있다. (원하는 위치에 한번에 접근 가능)
+// 원하는 위치에서 원소 수정 삽입 가능.
 
 #include<vector>
 #include<iostream>
