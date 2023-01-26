@@ -69,15 +69,19 @@ void run_large_search_test(int size, int N)
     std::sort(S.begin(), S.end());
 
     // 검색 시간 측정 시작
-    std::chrono::system_clock::time_point begin = std::chrono::system_clock::now();
+    std::chrono::system_clock::time_point t1 = std::chrono::system_clock::now();
+
+    std::cout << t1.time_since_epoch().count() << std::endl;
 
     bool search_result = binary_search(N, S);
 
-    std::chrono::system_clock::time_point end = std::chrono::system_clock::now();
+    std::chrono::system_clock::time_point t2 = std::chrono::system_clock::now();
 
-    auto delay = std::chrono::duration_cast<std::chrono::microseconds>(end - begin);
+    std::chrono::duration<long long, std::nano> diff = std::chrono::duration_cast<std::chrono::nanoseconds>(t2 - t1);
 
-    std::cout << "이진 검색 수행 시간: " << delay.count() << std::endl;
+    std::cout << t2.time_since_epoch().count() << std::endl;
+
+    std::cout << "이진 검색 수행 시간: " << diff.count() << std::endl;
 
     if (search_result == true)
     {
