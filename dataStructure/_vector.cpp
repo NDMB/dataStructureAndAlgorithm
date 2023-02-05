@@ -46,4 +46,6 @@ int main()
     vec2.clear();
 
     vec2.shrink_to_fit(); // 벡터 크기에 맞추어 용량 줄임
+
+    vec1.emplace_back(1); // 벡터의 자료형에 맞게 객체 생성후 삽입.
 }

@@ -46,6 +46,7 @@
         "ctime": "cpp",
         "list": "cpp",
         "unordered_set": "cpp",
-        "ratio": "cpp"
+        "ratio": "cpp",
+        "iomanip": "cpp"
     }
 }
