@@ -1,5 +1,9 @@
 #include<iostream>
 #include<vector>
+#include<ctime>
+#include<random>
+
+// 대용량의 데이터를 정렬하는 알고리즘
 
 template <typename T>
 
@@ -58,18 +62,46 @@ std::vector<T> merge_sort(std::vector<T> arr)
     return arr;
 }
 
-template <typename T>
-void print_vector(std::vector<T> arr)
-{
-    for (auto i : arr)
-    {
-        std::cout << i << " ";
-    }
-
-    std::cout << std::endl;
-}
+#define N 1000
 
 int main()
 {
+    srand(time(NULL));
     
+    std::vector<int> vec(N);
+    int rand_val;
+
+    for(int i = 0; i < N; i++)
+    {
+        rand_val = rand() % N + 1;
+        vec[i] = rand_val;
+    }
+
+    for(int i = 0; i < N; i++)
+    {
+        std::cout << vec[i] << " ";
+
+        if((i+1)%10 == 0)
+        {
+            std::cout << std::endl;
+        }
+    }
+
+
+    std::vector<int> sorted_vec = merge_sort<int>(vec);
+
+
+    
+    std::cout << std::endl << "[after sort]" << std::endl;
+
+    for(int i = 0; i < N; i++)
+    {
+        std::cout << sorted_vec[i] << " ";
+
+        if((i+1)%10 == 0)
+        {
+            std::cout << std::endl;
+        }
+    }
+
 }
